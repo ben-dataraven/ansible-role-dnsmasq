@@ -5,11 +5,11 @@
 {% if dnsmasq_filterwin2k %}filterwin2k{% endif %}
 
 # Resolv.conf settings
-{% if dnsmasq_resolv_file %}resolv-file={{ dnsmasq_resolv_file }}{% endif %}
+{% if dnsmasq_resolv_file is defined %}resolv-file={{ dnsmasq_resolv_file }}{% endif %}
 {% if dnsmasq_resolv_strict_order %}strict-order{% endif %}
 {% if dnsmasq_resolv_no_resolv %}no-resolv{% endif %}
 {% if dnsmasq_resolv_no_poll %}no-poll{% endif %}
-{% if dnsmasq_name_servers %}
+{% if dnsmasq_name_servers is defined %}
   {% for ns in dnsmasq_name_servers %}
 server={{ ns }}
   {% endfor %}
@@ -17,8 +17,8 @@ server={{ ns }}
 
 # Hosts settings
 {% if dnsmasq_hosts_no_hosts %}no-hosts{% endif %}
-{% if dnsmasq_hosts_addn_hosts %}addn-hosts={{ dnsmasq_hosts_addn_hosts }}{% endif %}
+{% if dnsmasq_hosts_addn_hosts is defined %}addn-hosts={{ dnsmasq_hosts_addn_hosts }}{% endif %}
 
 # Cache settings
-{% if dnsmasq_cache_size %}cache-size={{ dnsmasq_cache_size }}{% endif %}
-{% if dnsmasq_cache_min_ttl %}min-cache-ttl={{ dnsmasq_cache_min_ttl }}{% endif %}
+{% if dnsmasq_cache_size is defined %}cache-size={{ dnsmasq_cache_size }}{% endif %}
+{% if dnsmasq_cache_min_ttl is defined %}min-cache-ttl={{ dnsmasq_cache_min_ttl }}{% endif %}
