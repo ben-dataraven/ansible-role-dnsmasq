@@ -1,0 +1,18 @@
+---
+# defaults file for dnsmasq
+
+dnsmasq_domain_needed: false
+dnsmasq_bogus_priv: false
+dnsmasq_filterwin2k: false
+
+# dnsmasq_resolv_file:
+dnsmasq_resolv_strict_order: false
+dnsmasq_resolve_no_resolv: false
+dnsmasq_resolv_no_poll: false
+# dnsmasq_name_servers:
+
+dnsmasq_hosts_no_hosts: false
+# dnsmasq_hosts_addn_hosts:
+
+# dnsmasq_cache_size:
+# dnsmasq_cache_min_ttl:

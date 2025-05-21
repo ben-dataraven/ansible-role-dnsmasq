@@ -1,0 +1,38 @@
+---
+# tasks file for dnsmasq
+
+- name: Install dnsmasq packages
+  ansible.builtin.package:
+    state: present
+    name:
+      - dnsmasq
+
+- name: Configure dnsmasq - System settings
+  ansible.builtin.template:
+    src: system.conf.j2
+    dest: /etc/dnsmasq.d/system.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Restart dnsmasq
+
+- name: Configure dnsmasq - DNS settings
+  ansible.builtin.template:
+    src: dns.conf.j2
+    dest: /etc/dnsmasq.d/dns.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Restart dnsmasq
+
+- name: Configure dnsmasq - DHCP settings
+  ansible.builtin.template:
+    src: dhcp.conf.j2
+    dest: /etc/dnsmasq.d/dhcp.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Restart dnsmasq
