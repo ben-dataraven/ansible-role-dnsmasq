@@ -1,6 +1,12 @@
 ---
 # defaults file for dnsmasq
 
+## System variables
+# dnsmasq_port:
+# dnsmasq_listen_address:
+dnsmasq_bind_interfaces: false
+
+## DNS variables
 dnsmasq_domain_needed: false
 dnsmasq_bogus_priv: false
 dnsmasq_filterwin2k: false

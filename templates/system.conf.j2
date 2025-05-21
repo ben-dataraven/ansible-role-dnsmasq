@@ -1,3 +1,11 @@
 {{ ansible_managed | comment }}
 
-## system settings are not currently supported by this ansible module
+{% if dnsmasq_port is defined %}
+port={{ dnsmasq_port }}
+{% endif %}
+{% if dnsmasq_listen_address is defined %}
+listen-address={{ dnsmasq_listen_address }}
+{% endif %}
+{% if dnsmasq_bind_interfaces %}
+bind-interfaces
+{% endif %}
