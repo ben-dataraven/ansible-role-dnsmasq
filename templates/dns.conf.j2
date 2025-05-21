@@ -24,9 +24,9 @@ no-resolv
 no-poll
 {% endif %}
 {% if dnsmasq_name_servers is defined %}
-  {% for ns in dnsmasq_name_servers %}
+{% for ns in dnsmasq_name_servers %}
 server={{ ns }}
-  {% endfor %}
+{% endfor %}
 {% endif %}
 
 # Hosts settings
